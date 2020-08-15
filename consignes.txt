@@ -1,0 +1,36 @@
+CONSIGNE
+
+
+Le but sera de développer un dashboard dans lequel nous pouvons voir l’évolution des
+crypto-monnaies sous forme de graphiques. L'utilisateur pourra ajouter un graphique en
+recherchant parmi les cryptomonnaies disponibles
+
+
+CAHIER DES CHARGES
+o Être capable d’afficher un graphique pour au moins deux cryptomonnaies.
+o Les données du graphique doivent être chargées de manière asynchrones. (i.e: si le
+graphique affiche le graphique du Bitcoin , un clic sur Ethereum devra provoquer un
+appel backend).
+o L’interface devra être prévue pour de fortes demandes, on mettra alors tous les
+dispositifs connus en œuvre pour rendre l'interface efficace.
+o Un style CSS doit être appliqué (fais-toi plaisir), mais devra se passer de ressources
+externes (comme bootstrap ou autres librairies de style)
+
+
+
+BONUS
+o Tâches CRON (fortement recommandé, voir laravel:Scheduled tasks)
+o Pas d’utilisation de bootstrap (fortement recommandé)
+o Données d’analyse (statistiques diverses) (recommandé)
+o Ajouter une nouvelle cryptomonnaie à la liste (basé sur celles dispos sur la source)
+o Responsive
+o Toute autre amélioration sera prise en compte
+
+
+
+CONTRAINTES : Laravel / HTML / CSS / JS
+RECOMMENDATIONS : JQuery / SASS
+RESSOURCES : CoinGecko (récupération du court), Google chart
+
+Exercice à rendre sous 3 jours à compter de la réception du document.
+Email de réception : j.henrot-dias@deskoin.com / Objet : Exercice Full Stack

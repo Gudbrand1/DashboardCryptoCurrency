@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="30"> -->
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <title>Dashboard crypto-currencies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Crypto Currencies DashBoard</h1>
+    <div id="chart_div" style="width: 100%; height: 500px;"></div>
+    <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+    var data = new google.visualization.arrayToDataTable([
+        ['Unix time', 'value'],
+        <?= $str2;?>
+    ]);
+
+    var options = {
+        title: '<?= htmlspecialchars($cryptocurrency) ?> value <?= htmlspecialchars($currency) ?>',
+        hAxis: {title: 'Unix Time',  titleTextStyle: {color: '#333',bold:true}},
+        vAxis: {minValue: 0}
+    };
+
+    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+    chart.draw(data, options);
+    }
+</script>
+<p class="center">The price of <?= $cryptocurrency ?> is <?= $priceCrypto[$cryptocurrency][$currency] ?> <?= $currency ?> at the moment you are reading that</p>
+<p class="center"><?= $ticker['tickers'][0]['base'] ?> to <?= $ticker['tickers'][0]['target'] ?> has a converted volume of <?= $ticker['tickers'][0]['converted_volume']['usd'] ?> and a trust score of color: <?= $ticker['tickers'][0]['trust_score'] ?>, the last trade from <?= $ticker['tickers'][0]['base'] ?> to <?= $ticker['tickers'][0]['target'] ?> happened on the <?= $ticker['tickers'][0]['last_traded_at'] ?> a trade url for this coin can be found on:</p>
+    <p class="center"><a href="https://www.deskoin.com/">deskoin website</a> </p>
+    <form action="converterEpoch.php" method="POST">
+        <label for="epoch">Please, may enter the Unix time you can see under the charts, with or without the commas</label>
+        <input type="text" name="epoch" required>
+        <input type="submit">
+    </form>
+    <a href="dashboard.php">Get back to the precedent page to choose an another curency</a>
+</body>
+</html>

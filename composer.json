@@ -1,0 +1,19 @@
+{
+    "name": "utilisateur/crypto",
+    "description": " ",
+    "authors": [
+        {
+            "name": "Gudbrand1",
+            "email": "raphael57740@gmail.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "guzzlehttp/guzzle": "v6.x",
+        "codenix-sv/coingecko-api": "^1.0",
+        "php": ">=5.5",
+        "guzzlehttp/promises": "^1.0",
+        "guzzlehttp/psr7": "^1.6.1",
+        "symfony/polyfill-intl-idn": "^1.17.0"
+    }
+}
