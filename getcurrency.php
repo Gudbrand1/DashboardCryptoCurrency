@@ -42,6 +42,9 @@ if($test['gecko_says']=='(V3) To the Moon!'){
 
     $str2 = mb_substr($data1, 0, -1);
 
+    $str2 = "['Date', 'value']," . $str2;
+
+
 }else{
     echo'the CoinGecko Api is down you might want to comeback later';
 }
