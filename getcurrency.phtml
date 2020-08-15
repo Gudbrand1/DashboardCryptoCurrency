@@ -18,13 +18,13 @@
         google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
     var data = new google.visualization.arrayToDataTable([
-        ['Unix time', 'value'],
+        ['Date', 'value'],
         <?= $str2;?>
     ]);
 
     var options = {
         title: '<?= htmlspecialchars($cryptocurrency) ?> value <?= htmlspecialchars($currency) ?>',
-        hAxis: {title: 'Unix Time',  titleTextStyle: {color: '#333',bold:true}},
+        hAxis: {title: 'Date',  titleTextStyle: {color: '#333',bold:true}},
         vAxis: {minValue: 0}
     };
 
@@ -35,11 +35,6 @@
 <p class="center">The price of <?= $cryptocurrency ?> is <?= $priceCrypto[$cryptocurrency][$currency] ?> <?= $currency ?> at the moment you are reading that</p>
 <p class="center"><?= $ticker['tickers'][0]['base'] ?> to <?= $ticker['tickers'][0]['target'] ?> has a converted volume of <?= $ticker['tickers'][0]['converted_volume']['usd'] ?> and a trust score of color: <?= $ticker['tickers'][0]['trust_score'] ?>, the last trade from <?= $ticker['tickers'][0]['base'] ?> to <?= $ticker['tickers'][0]['target'] ?> happened on the <?= $ticker['tickers'][0]['last_traded_at'] ?> a trade url for this coin can be found on:</p>
     <p class="center"><a href="https://www.deskoin.com/">deskoin website</a> </p>
-    <form action="converterEpoch.php" method="POST">
-        <label for="epoch">Please, may enter the Unix time you can see under the charts, with or without the commas</label>
-        <input type="text" name="epoch" required>
-        <input type="submit">
-    </form>
     <a href="dashboard.php">Get back to the precedent page to choose an another curency</a>
 </body>
 </html>
