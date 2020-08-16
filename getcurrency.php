@@ -11,8 +11,11 @@ if($test['gecko_says']=='(V3) To the Moon!'){
         $cryptocurrency = $_POST['cryptoCurrency'];
         $currency = $_POST['currency'];
     }
-    else{
-        $cryptocurrency = 'bitcoin'; //default case
+    elseif(!empty($_POST['cryptoCurrency'])){
+        $cryptocurrency = $_POST['cryptoCurrency']; 
+        $currency = 'usd'; //default case for $_POST['currency'];
+    }else{
+        $cryptocurrency = 'bitcoin'; //default case for $_POST['cryptoCurrency']
         $currency = 'usd';
     }
 
