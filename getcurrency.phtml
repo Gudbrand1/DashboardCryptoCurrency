@@ -33,7 +33,7 @@
 </script>
 <p class="center">The price of <?= $cryptocurrency ?> is <?= $priceCrypto[$cryptocurrency][$currency] ?> <?= $currency ?> at the moment you are reading that</p>
 <p class="center"><?= $ticker['tickers'][0]['base'] ?> to <?= $ticker['tickers'][0]['target'] ?> has a converted volume of <?= $ticker['tickers'][0]['converted_volume']['usd'] ?> and a trust score of color: <?= $ticker['tickers'][0]['trust_score'] ?>, the last trade from <?= $ticker['tickers'][0]['base'] ?> to <?= $ticker['tickers'][0]['target'] ?> happened on the <?= $ticker['tickers'][0]['last_traded_at'] ?> a trade url for this coin can be found on:</p>
-    <p class="center"><a href="https://www.deskoin.com/">deskoin website</a> </p>
+    <p class="center"><a href="<?= $ticker['tickers'][0]['trade_url'] ?>"><?= $ticker['tickers'][0]['trade_url'] ?></a></p>
     <a href="dashboard.php">Get back to the precedent page to choose an another curency</a>
 </body>
 </html>
